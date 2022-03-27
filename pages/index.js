@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import {useRouter} from 'next/router '
+import { useRouter } from 'next/router'
 
 function Home() {
+  const router = useRouter()
+
   const handleClick = () => { 
     console.log('lace your order');
+    router.replace('/Products')
   }
   return(
     <div>
@@ -13,7 +16,7 @@ function Home() {
       </Link> {' '}
 
       <Link href='./Products' > 
-        <a >Products</a>
+        <a >Products</a> 
       </Link>
       <button onClick={handleClick}>
         Place Holder
