@@ -21,6 +21,9 @@ function Home() {
       <button onClick={handleClick}>
         Place Holder
       </button>
+      <Link href="/posts">
+        <a> Posts </a>
+      </Link>
     </div>
   )
 }

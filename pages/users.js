@@ -1,15 +1,32 @@
-import React from 'react'
+import User from "../components/user.js";
 
-function userList() {
+
+function UserList({ users }) {
   return (
-    <div>userList</div>
-  )
+    <>
+      <h1>userList</h1>
+      {users.map(user=> {
+        return (
+          <div key={user.id}>
+            <User  user = {user}/>
+          </div>
+        );
+      })}
+    </>
+  );
 }
 
-export default userList;
+export default UserList;
 
-export async function getStartedProps() {
-  const requires = await fetch("https://jsonplaceholder.typicode.com/users")
-  const data = await requires.json()
-  console.log(data);
+export async function getStaticProps() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await response.json();
+  console.log(data.email);
+
+  return {
+    props: {
+      users: data
+    }
+  }
 }
+
