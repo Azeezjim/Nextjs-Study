@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router'
+import {ExpenseTrackerContext} from "../"
 
 function Home() {
   const router = useRouter()
@@ -23,7 +24,7 @@ function Home() {
       </button>
       <Link href="/posts">
         <a> Posts </a>
-      </Link>
+      </Link> 
     </div>
   )
 }
