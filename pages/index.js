@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router'
-import {ExpenseTrackerContext} from "../"
+  
 
 function Home() {
   const router = useRouter()
@@ -16,7 +16,7 @@ function Home() {
         <a >Docs</a>
       </Link> {' '}
 
-      <Link href='./Products' > 
+      <Link href='./Products' >    
         <a >Products</a> 
       </Link>
       <button onClick={handleClick}>
